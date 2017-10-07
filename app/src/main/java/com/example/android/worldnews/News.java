@@ -1,5 +1,8 @@
 package com.example.android.worldnews;
 
+
+import java.util.Date;
+
 /**
  * Created by enach on 10/7/2017.
  */
@@ -20,6 +23,13 @@ public class News {
         mCategory = category;
         mTitle = title;
         mAuthor = author;
+        mDate = date;
+        mWebUrl = webUrl;
+    }
+
+    public News(String category, String title, String date, String webUrl){
+        mCategory = category;
+        mTitle = title;
         mDate = date;
         mWebUrl = webUrl;
     }

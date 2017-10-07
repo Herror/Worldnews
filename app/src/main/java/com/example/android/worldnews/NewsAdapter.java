@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by enach on 10/7/2017.
@@ -17,6 +19,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
     //public constructor
     public NewsAdapter(Activity context, ArrayList<News> news){
         super(context, 0 , news);
+    }
+
+    private String formatDate(Date dateObject) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        return dateFormat.format(dateObject);
     }
 
     @Override

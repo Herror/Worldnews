@@ -9,39 +9,42 @@
     android:paddingRight="16dp"
     android:paddingStart="16dp">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/general_info"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/time">
 
         <TextView
             android:id="@+id/category"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:text="Category" />
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_below="@+id/category"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
-            android:textSize="32sp"
+            tools:text="Title"
+            android:textSize="16sp"
             android:textStyle="bold" />
         <TextView
+            android:layout_below="@+id/title"
             android:id="@+id/author"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Author"
+            tools:text="Author"
             android:paddingLeft="16dp"/>
-    </LinearLayout>
+    </RelativeLayout>
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="date"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            tools:text="7/10/2017"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"/>
 </RelativeLayout>
