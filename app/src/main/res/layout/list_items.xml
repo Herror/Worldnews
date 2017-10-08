@@ -47,4 +47,5 @@
             tools:text="7/10/2017"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"/>
+
 </RelativeLayout>
