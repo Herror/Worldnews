@@ -21,10 +21,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         super(context, 0 , news);
     }
 
-    private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        return dateFormat.format(dateObject);
-    }
+    private static final String DATE_SEPARATOR = "T";
+    private static final String END_SEPARATOR = "Z";
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -54,10 +52,26 @@ public class NewsAdapter extends ArrayAdapter<News> {
         //set the text for the string
         authorTextView.setText(newsPosition.getAuthor());
 
+        String originalDate = newsPosition.getDate();
+        String dateView = null;
+        String timeView = null;
+
+        if (originalDate.contains(DATE_SEPARATOR) && originalDate.contains(END_SEPARATOR)){
+            String[] parts = originalDate.split(DATE_SEPARATOR);
+            timeView = parts[0];
+            dateView = parts[1];
+        }
+
         //find the TextView with the ID @time
-        TextView dateTextView = (TextView) newsItemView.findViewById(R.id.time);
+        TextView dateTextView = (TextView) newsItemView.findViewById(R.id.date_view);
         //set the text for the string
-        dateTextView.setText(newsPosition.getDate());
+        dateTextView.setText(dateView);
+
+        //find the TextView with the ID @time
+        TextView timeTextView = (TextView) newsItemView.findViewById(R.id.time_view);
+        //set the text for the string
+        timeTextView.setText(timeView);
+
 
         return newsItemView;
     }

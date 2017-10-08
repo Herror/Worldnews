@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     private TextView mEmptyStateView;
 
     //create a method to check if there is internet connection
-    private boolean isNewtworkAvailable(){
+    private boolean isNetworkAvailable(){
         ConnectivityManager connectivityManager
                 =(ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         //create an object for the empty TextView
         mEmptyStateView = (TextView) findViewById(R.id.empty_text_view);
 
-        if(isNewtworkAvailable() == true){
+        if(isNetworkAvailable() == true){
             //get a reference to the LoaderManager, in order to interact with loaders
             LoaderManager loaderManager = getLoaderManager();
             //initialize the loader
